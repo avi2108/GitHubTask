@@ -1,4 +1,4 @@
-package speaktechnical.com.githubtask;
+package speaktechnical.com.githubtask.models;
 
 /**
  * Created by avi on 03/05/2017.
