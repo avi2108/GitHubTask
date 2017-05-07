@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardviewATStudentItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_small">
+
+            <ImageView
+                android:id="@+id/imageViewAtItem"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_small" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tvForAuthorNameAtItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:layout_toRightOf="@id/imageViewAtItem"
+                android:text="asdf"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tvForCommitLabelAtItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvForAuthorNameAtItem"
+                android:layout_toRightOf="@id/imageViewAtItem"
+                android:text="Commit: "
+                android:textSize="14sp" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tvForShaMsgAtItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvForAuthorNameAtItem"
+                android:layout_toRightOf="@id/tvForCommitLabelAtItem"
+                android:text="asdf"
+
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tvForMsgLabelAtItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvForCommitLabelAtItem"
+                android:layout_toRightOf="@id/imageViewAtItem"
+                android:text="Commit Message: "
+                android:textColor="@color/fb_blue"
+                android:textSize="14sp" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tvForMsgAtItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvForCommitLabelAtItem"
+                android:layout_toRightOf="@id/tvForMsgLabelAtItem"
+                android:text="asdf"
+                android:textSize="15sp" />
+
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tvForTimeStampAtItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text=""
+                android:textColor="@android:color/secondary_text_light"
+                android:textSize="@dimen/text_size_tiny" />
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>
