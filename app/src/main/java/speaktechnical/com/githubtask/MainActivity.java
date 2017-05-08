@@ -32,10 +32,10 @@ import speaktechnical.com.githubtask.adapters.GitCommitsRecyclerAdapter;
 public class MainActivity extends AppCompatActivity {
 
     private ArrayList<GitHubFeed> gitHubFeedArrayList;//datalist holding GitHub rails commit feed
-    GitCommitsRecyclerAdapter adapter;
+    private GitCommitsRecyclerAdapter adapter;
 
-    RecyclerView recyclerView;
-    ProgressBar progressBar;
+    private RecyclerView recyclerView;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
-        //--initializing class objects----
+        //--initializing class objects---
         gitHubFeedArrayList = new ArrayList<>();
         adapter = new GitCommitsRecyclerAdapter(this, gitHubFeedArrayList);
         recyclerView.setAdapter(adapter);
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
                                                 jsonObject.getJSONObject("commit").getJSONObject("author").getString("date")));
 
                                     }
-                                    adapter.notifyDataSetChanged();
+                                    adapter.notifyDataSetChanged();//notifying the adapter after data set change
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
@@ -124,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 progressBar.setVisibility(View.GONE);
+                if(error.getMessage()!=null)
                 Log.e("error", error.getMessage());
             }
         }) { //headers to be passed for this GIT commit data
@@ -136,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        MyApplication.getInstance().addToRequestQueue(jsonRequest);
+        MyApplication.getInstance().addToRequestQueue(jsonRequest);//adding the volley request to request que
     }
 
 }
